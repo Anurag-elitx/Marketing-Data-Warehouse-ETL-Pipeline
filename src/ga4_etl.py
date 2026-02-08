@@ -89,3 +89,25 @@ def load_ga4_country_summary(
     print(ga4_country.head())
 
     return ga4_country
+
+
+def load_ga4_data(data_dir: str, filename: str = "ga4_obfuscated_sample_ecommerce.csv") -> pd.DataFrame:
+    """
+    Load and process GA4 ecommerce data.
+    
+    This is an alias for load_ga4_country_summary() for backward compatibility.
+    
+    Parameters
+    ----------
+    data_dir : str
+        Path to directory containing the GA4 data file.
+    filename : str
+        Name of the GA4 CSV file (default: ga4_obfuscated_sample_ecommerce.csv)
+    
+    Returns
+    -------
+    pd.DataFrame
+        Aggregated GA4 data by Date and Country with Sessions, Transactions, Revenue.
+    """
+    return load_ga4_country_summary(data_dir, filename)
+
